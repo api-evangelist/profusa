@@ -1,0 +1,50 @@
+generated: '2026-08-26'
+method: probed
+source: https://profusa.com/.well-known/ and https://investors.profusa.com/.well-known/
+name: Profusa well-known probe
+note: >-
+  Probed on 2026-08-26. Profusa serves no /.well-known/ documents. On profusa.com
+  (WordPress on WP Engine) every path returns 404 — either the WordPress 404 template
+  or the origin's plain 404. On investors.profusa.com every probed path returns HTTP 200
+  with the investor-site single-page-app HTML shell, including /.well-known/agent-card.json,
+  /.well-known/api-catalog and /llms.txt; those are soft-404 catch-alls, not documents,
+  and are recorded here as MISSES. No WellKnown or SecurityTxt pointer is wired into
+  apis.yml because no path returned a real document.
+hosts:
+- host: profusa.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 404
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    file: null
+- host: investors.profusa.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    file: null
+    note: soft-404 — HTML single-page-app shell, not a security.txt document
+  - path: /.well-known/api-catalog
+    status: 200
+    file: null
+    note: soft-404 — HTML single-page-app shell, not an API catalog
+  - path: /.well-known/agent-card.json
+    status: 200
+    file: null
+    note: soft-404 — HTML single-page-app shell, not an A2A agent card

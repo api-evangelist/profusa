@@ -12,6 +12,9 @@ description: 'Profusa, Inc. (Nasdaq: PFSA) is a South San Francisco digital-heal
   NorthView Acquisition Corporation. As of this profiling pass the company publishes no
   developer program, no public API documentation and no machine-readable API contract.'
 url: https://raw.githubusercontent.com/api-evangelist/profusa/refs/heads/main/apis.yml
+x-api-posture: no-product-api
+x-api-posture-basis: observed
+x-api-posture-note: "As of this profiling pass the company publishes no developer program, no public API documentation and no machine-readable API contract."
 deliveryModel:
   model: unknown
   open_source: false
